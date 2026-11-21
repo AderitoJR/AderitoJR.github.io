@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Portfólio de Adérito Luciano Júnior, desenvolvedor de software em Tete, Moçambique: DealPoint, CAROL, AgroDesk e outros projetos.">
+<meta property="og:title" content="Adérito Luciano Júnior">
+<meta property="og:description" content="Desenvolvedor de software em Tete, Moçambique.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23141414'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='900' font-size='18' text-anchor='middle' fill='%23fff'%3EA%3C/text%3E%3C/svg%3E">
+<style>html{color-scheme:light}body{margin:0}</style>
+<title>Adérito Luciano Júnior</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: faixa escura de abertura com composição de ecrãs reais, depois secções claras; projetos principais em vitrines com galeria, restantes em estudos de caso; faixa escura de contacto */
+:root {
+  --bg: #f3f5f9;
+  --surface: #ffffff;
+  --surface-2: #e8edf5;
+  --ink: #0f172a;
+  --muted: #55627a;
+  --line: #d9e0ec;
+  --accent: #1f4e8c;
+  --accent-ink: #ffffff;
+  --accent-soft: #dfe9f7;
+  --warm: #a85a08;
+  --band: #0a1428;
+  --band-ink: #eaf0fa;
+  --band-muted: #9fb0cc;
+  --band-line: rgba(255,255,255,0.12);
+  --band-accent: #6aa3ff;
+  --shadow: 0 18px 40px -18px rgba(7,24,29,0.35);
+  --font-display: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --gl: max(16px, env(safe-area-inset-left, 0px));
+  --gr: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a1220; --surface: #101a2e; --surface-2: #16233c; --ink: #e6ecf7; --muted: #97a6c2; --line: #22314d;
+    --accent: #6aa3ff; --accent-ink: #07142b; --accent-soft: #14284a; --warm: #f0b25a; --band: #050b17;
+    --shadow: 0 18px 40px -18px rgba(0,0,0,0.7); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a1220; --surface: #101a2e; --surface-2: #16233c; --ink: #e6ecf7; --muted: #97a6c2; --line: #22314d;
+  --accent: #6aa3ff; --accent-ink: #07142b; --accent-soft: #14284a; --warm: #f0b25a; --band: #050b17;
+  --shadow: 0 18px 40px -18px rgba(0,0,0,0.7); color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+  padding-block: 0;
+  padding-left: var(--gl); padding-right: var(--gr);
+  overflow-x: clip;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; line-height: 1.1; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+a { color: inherit; }
+img { display: block; max-width: 100%; height: auto; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 1120px; margin-inline: auto; }
+.bleed { margin-left: calc(-1 * var(--gl)); margin-right: calc(-1 * var(--gr)); padding-left: var(--gl); padding-right: var(--gr); }
+.label { font-family: var(--font-mono); font-weight: 700; font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.mono { font-family: var(--font-mono); font-weight: 500; font-size: 0.85rem; }
+
+/* nav */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; background: var(--bg); border-bottom: 1px solid var(--line); }
+.nav-in { max-width: 1120px; margin-inline: auto; display: flex; align-items: center; gap: 22px; height: 58px; }
+.brand { font-family: var(--font-display); font-weight: 700; text-decoration: none; margin-right: auto; white-space: nowrap; font-size: 1.05rem; }
+.brand b { color: var(--accent); font-weight: 700; }
+.nav a.lnk { text-decoration: none; color: var(--muted); font-size: 0.88rem; padding-block: 6px; border-bottom: 2px solid transparent; }
+.nav a.lnk:hover, .nav a.lnk[aria-current="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.theme-btn { font: inherit; font-size: 0.8rem; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 5px 13px; cursor: pointer; }
+.theme-btn:hover { border-color: var(--accent); }
+@media (max-width: 760px) { .nav a.lnk { display: none; } }
+
+/* hero */
+.hero-band {
+  background-color: var(--band); color: var(--band-ink);
+  background-image: linear-gradient(var(--band-line) 1px, transparent 1px), linear-gradient(90deg, var(--band-line) 1px, transparent 1px);
+  background-size: 56px 56px; background-position: -1px -1px;
+  border-bottom: 1px solid var(--band-line);
+}
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: 40px; align-items: center; padding-block: 72px 80px; }
+.hero .label { color: var(--band-accent); }
+.hero h1 { font-size: clamp(2.5rem, 6.2vw, 4.7rem); font-weight: 800; letter-spacing: -0.04em; line-height: 0.98; margin: 16px 0 18px; }
+.hero h1 em { font-style: normal; color: var(--band-accent); }
+.hero .role { font-family: var(--font-display); font-size: clamp(1.1rem, 2.2vw, 1.4rem); font-weight: 500; color: var(--band-ink); margin-bottom: 18px; }
+.hero .lead { color: var(--band-muted); max-width: 52ch; font-size: 1.06rem; margin-bottom: 28px; }
+.cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-block; text-decoration: none; font-weight: 500; font-size: 0.93rem; padding: 11px 20px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.btn:hover { border-color: var(--accent); }
+.hero .btn { background: transparent; color: var(--band-ink); border-color: var(--band-line); }
+.hero .btn:hover { border-color: var(--band-accent); }
+.btn.primary, .hero .btn.primary { background: var(--band-accent); color: #07142b; border-color: var(--band-accent); font-weight: 600; }
+.btn.primary:hover { filter: brightness(1.07); }
+
+.stage { position: relative; aspect-ratio: 1.12; min-width: 0; }
+.stage .win, .stage .phone { position: absolute; box-shadow: 0 30px 60px -24px rgba(0,0,0,0.75); }
+.stage .w1 { left: 0; top: 14%; width: 82%; z-index: 2; }
+.stage .w2 { right: 0; top: 0; width: 56%; z-index: 1; }
+.stage .phone { right: 3%; bottom: 0; width: 25%; z-index: 3; }
+
+/* device frames */
+.win { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.win .bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: var(--surface-2); border-bottom: 1px solid var(--line); }
+.win .bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--line); display: block; }
+.win .bar i:nth-child(1) { background: #e0675f; } .win .bar i:nth-child(2) { background: #e6b54a; } .win .bar i:nth-child(3) { background: #62c068; }
+.win .bar span { margin-left: 8px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.win img { width: 100%; }
+.phone { border-radius: 22px; overflow: hidden; border: 5px solid #0b1417; background: #0b1417; }
+.phone img { width: 100%; border-radius: 16px; }
+
+/* stats */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+.stat { padding: 28px 24px; border-left: 1px solid var(--line); }
+.stat:first-child { border-left: 0; padding-left: 0; }
+.stat b { display: block; font-family: var(--font-display); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat span { display: block; margin-top: 8px; color: var(--muted); font-size: 0.88rem; max-width: 24ch; }
+@media (max-width: 760px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .stat:nth-child(3) { border-left: 0; padding-left: 0; } .stat { border-bottom: 1px solid var(--line); } .stat:nth-child(n+3) { border-bottom: 0; } }
+
+/* sections */
+section { padding-block: 84px; }
+section + section { border-top: 1px solid var(--line); }
+.sec-head { display: grid; gap: 10px; margin-bottom: 44px; max-width: 720px; }
+.sec-head h2 { font-size: clamp(1.9rem, 4.4vw, 3rem); font-weight: 700; letter-spacing: -0.03em; }
+.sec-head p { color: var(--muted); font-size: 1.04rem; }
+
+/* sobre */
+.about { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.about > div { padding: 28px 26px 30px; border-left: 1px solid var(--line); }
+.about > div:first-child { border-left: 0; padding-left: 0; }
+.about h3 { font-size: 1.25rem; margin-bottom: 10px; }
+.about p { color: var(--muted); font-size: 0.97rem; }
+.about .label { display: block; margin-bottom: 14px; color: var(--accent); }
+@media (max-width: 820px) { .about { grid-template-columns: minmax(0, 1fr); } .about > div { border-left: 0; padding-left: 0; padding-right: 0; border-top: 1px solid var(--line); } .about > div:first-child { border-top: 0; } }
+
+/* showcase */
+.showcase { display: grid; gap: 28px; padding-block: 56px; border-top: 1px solid var(--line); }
+.showcase:first-of-type { border-top: 0; padding-top: 0; }
+.sc-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+.sc-head h3 { font-size: clamp(2.2rem, 5.4vw, 3.8rem); font-weight: 800; letter-spacing: -0.04em; line-height: 0.95; }
+.sc-head .status { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+.sc-head .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--warm); }
+.sc-head p { color: var(--muted); font-size: 1.04rem; }
+.sc-head .tagline { color: var(--accent); font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; margin-top: 10px; display: block; }
+@media (max-width: 820px) { .sc-head { grid-template-columns: minmax(0, 1fr); gap: 16px; } }
+
+.gallery { display: grid; gap: 14px; min-width: 0; }
+.gallery .win { box-shadow: var(--shadow); }
+.gallery .cap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; color: var(--muted); font-size: 0.9rem; }
+.gallery .cap b { color: var(--ink); font-weight: 600; }
+.thumbs { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x proximity; }
+.thumbs button { flex: 0 0 auto; width: 148px; padding: 0; border: 2px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); cursor: pointer; opacity: 0.72; scroll-snap-align: start; }
+.thumbs button:hover { opacity: 1; }
+.thumbs button[aria-selected="true"] { border-color: var(--accent); opacity: 1; }
+.thumbs img { width: 100%; height: 84px; object-fit: cover; object-position: top left; }
+
+.sc-body { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; }
+@media (max-width: 900px) { .sc-body { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
+.points { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.points li { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-top: 1px solid var(--line); }
+.points li:last-child { border-bottom: 1px solid var(--line); }
+.points h4 { font-size: 0.98rem; font-weight: 600; letter-spacing: 0; }
+.points p { color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 560px) { .points li { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
+.aside h4 { font-family: var(--font-mono); font-size: 0.74rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 26px; }
+.chip { font-size: 0.82rem; padding: 5px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+.chip.on { background: var(--accent-soft); border-color: transparent; color: var(--accent); font-weight: 500; }
+.tag { font-family: var(--font-mono); font-size: 0.72rem; padding: 4px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.phones { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.phones figure { margin: 0; display: grid; gap: 10px; }
+.phones figcaption { color: var(--muted); font-size: 0.86rem; text-align: center; }
+.phones .phone { box-shadow: var(--shadow); }
+@media (max-width: 760px) { .phones { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* estudos de caso */
+.cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 860px) { .cases { grid-template-columns: minmax(0, 1fr); } }
+.case { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 30px; display: grid; gap: 18px; align-content: start; min-width: 0; }
+.case.wide { grid-column: 1 / -1; }
+.case header { display: grid; gap: 6px; }
+.case h3 { font-size: 1.9rem; font-weight: 700; letter-spacing: -0.03em; }
+.case .sub { color: var(--accent); font-weight: 500; }
+.case .status { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.case > p { color: var(--muted); }
+.case ul.list { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+.case ul.list li { padding-left: 20px; position: relative; font-size: 0.95rem; }
+.case ul.list li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 8px; height: 2px; background: var(--accent); }
+.arch { display: flex; flex-wrap: wrap; align-items: stretch; gap: 8px; }
+.arch span { font-family: var(--font-mono); font-size: 0.74rem; padding: 7px 11px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--line); }
+.arch i { align-self: center; color: var(--accent); font-style: normal; font-family: var(--font-mono); }
+.case .tags { margin-top: 2px; }
+.case.wide .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+@media (max-width: 760px) { .case.wide .two { grid-template-columns: minmax(0, 1fr); } .case { padding: 24px 20px; } }
+.group-title { display: flex; align-items: baseline; gap: 16px; margin: 64px 0 20px; }
+.group-title:first-of-type { margin-top: 0; }
+.group-title h3 { font-size: 1.4rem; }
+.group-title::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+/* experiência */
+.xp { display: grid; }
+.xp-item { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 28px; padding-block: 28px; border-top: 1px solid var(--line); }
+.xp-item:last-child { border-bottom: 1px solid var(--line); }
+.xp-item h3 { font-size: 1.35rem; margin-bottom: 4px; }
+.xp-item .org { color: var(--accent); font-weight: 500; }
+.xp-item ul { margin: 14px 0 0; padding-left: 18px; display: grid; gap: 5px; color: var(--muted); }
+@media (max-width: 700px) { .xp-item { grid-template-columns: minmax(0, 1fr); gap: 8px; } }
+
+/* competências */
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 32px; }
+.skills h3, .two-col h3 { font-family: var(--font-mono); font-size: 0.74rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.skills ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; }
+.two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 44px; margin-top: 56px; }
+.row { display: flex; justify-content: space-between; gap: 16px; padding-block: 10px; border-bottom: 1px solid var(--line); }
+.row span:last-child { color: var(--muted); text-align: right; flex: none; }
+
+/* contacto */
+.contact-band { background: var(--band); color: var(--band-ink); border-top: 1px solid var(--band-line); }
+.contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; padding-block: 88px 72px; }
+.contact .label { color: var(--band-accent); }
+.contact h2 { font-size: clamp(2.2rem, 5.6vw, 4rem); font-weight: 800; letter-spacing: -0.04em; margin: 14px 0 16px; }
+.contact p.lead { color: var(--band-muted); max-width: 44ch; }
+.c-list { display: grid; align-content: start; }
+.c-row { display: grid; grid-template-columns: 84px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding-block: 16px; border-bottom: 1px solid var(--band-line); }
+.c-row:first-child { border-top: 1px solid var(--band-line); }
+.c-row .label { color: var(--band-muted); }
+.c-row .val { overflow-wrap: anywhere; user-select: all; text-decoration: none; }
+.c-row a.val:hover { color: var(--band-accent); }
+.copy { font: inherit; font-size: 0.78rem; background: transparent; color: var(--band-accent); border: 1px solid var(--band-line); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.copy:hover { border-color: var(--band-accent); }
+footer.foot { border-top: 1px solid var(--band-line); padding-block: 22px 28px; color: var(--band-muted); font-size: 0.85rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+@media (max-width: 820px) { .contact { grid-template-columns: minmax(0, 1fr); gap: 32px; } .hero { grid-template-columns: minmax(0, 1fr); padding-block: 48px 56px; } .stage { max-width: 640px; } }
+
+
+/* ===== efeitos ===== */
+#progress { position: fixed; left: 0; top: 0; height: 3px; width: 100%; z-index: 60; transform: scaleX(0); transform-origin: 0 50%; background: linear-gradient(90deg, var(--accent), var(--warm)); }
+.nav { backdrop-filter: saturate(1.5) blur(12px); -webkit-backdrop-filter: saturate(1.5) blur(12px); background: color-mix(in srgb, var(--bg) 84%, transparent); }
+
+.hero-band { position: relative; overflow: hidden; isolation: isolate; }
+.hero-band > .wrap { position: relative; z-index: 3; }
+.net { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+.orb { position: absolute; border-radius: 50%; filter: blur(70px); opacity: .5; z-index: 0; pointer-events: none; will-change: transform; }
+.orb.o1 { width: 520px; height: 520px; right: -120px; top: -140px; background: radial-gradient(circle, #2f6fe0 0%, transparent 68%); animation: drift1 18s ease-in-out infinite alternate; }
+.orb.o2 { width: 420px; height: 420px; left: -140px; bottom: -160px; background: radial-gradient(circle, #e59a2e 0%, transparent 70%); opacity: .28; animation: drift2 22s ease-in-out infinite alternate; }
+@keyframes drift1 { to { transform: translate(-90px, 70px) scale(1.12); } }
+@keyframes drift2 { to { transform: translate(110px, -60px) scale(1.15); } }
+.spot { position: absolute; inset: 0; z-index: 2; pointer-events: none; background: radial-gradient(420px circle at var(--mx, 70%) var(--my, 30%), rgba(106,163,255,0.16), transparent 60%); mix-blend-mode: screen; }
+
+.hero h1 .wd { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .08em; margin-bottom: -.08em; }
+.hero h1 .wd > span { display: inline-block; animation: rise .95s cubic-bezier(.2,.75,.2,1) both; animation-delay: calc(var(--i) * 90ms + 80ms); }
+@keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
+
+.stage { perspective: 1500px; }
+.stage-in { position: absolute; inset: 0; transform-style: preserve-3d; transform: rotateY(calc(var(--px, 0) * 7deg)) rotateX(calc(var(--py, 0) * -6deg)); will-change: transform; }
+.stage .w2 { transform: translateZ(10px); }
+.stage .w1 { transform: translateZ(55px); }
+.stage .phone { transform: translateZ(105px); }
+.stage .win, .stage .phone { backface-visibility: hidden; }
+
+.btn { will-change: transform; transition: transform .25s cubic-bezier(.2,.7,.2,1), border-color .2s, filter .2s; }
+.btn.primary { position: relative; overflow: hidden; }
+.btn.primary::after { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%); transform: translateX(-120%); }
+.btn.primary:hover::after { transform: translateX(120%); transition: transform .8s ease; }
+
+.rv { transition: transform .95s cubic-bezier(.2,.7,.2,1); }
+.rv.pre { transform: translateY(46px) scale(.985); }
+
+.ticker { overflow: hidden; border-block: 1px solid var(--line); background: var(--surface); padding-block: 15px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.ticker-track { display: flex; gap: 44px; width: max-content; animation: tick 46s linear infinite; font-family: var(--font-mono); font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-left: 44px; }
+.ticker-track span { display: inline-flex; align-items: center; gap: 44px; white-space: nowrap; }
+.ticker-track span::after { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: block; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes tick { to { transform: translateX(-50%); } }
+
+.case { position: relative; overflow: hidden; transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .25s, box-shadow .35s; }
+.case::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s; background: radial-gradient(360px circle at var(--cx, 50%) var(--cy, 50%), color-mix(in srgb, var(--accent) 16%, transparent), transparent 62%); }
+.case:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); box-shadow: var(--shadow); }
+.case:hover::before { opacity: 1; }
+.case > * { position: relative; }
+
+.gallery .win { transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s; transform-style: preserve-3d; }
+.gallery .win img { cursor: zoom-in; transition: opacity .22s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+.gallery .win img.swap { opacity: 0; transform: scale(1.015); }
+.gallery .win { position: relative; }
+.gallery .win::after { content: "Ampliar"; position: absolute; right: 12px; bottom: 12px; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; padding: 5px 11px; border-radius: 999px; background: rgba(7,24,29,.78); color: #eaf3f1; opacity: 0; transform: translateY(6px); transition: .3s; pointer-events: none; }
+.gallery .win:hover::after { opacity: 1; transform: none; }
+.thumbs button { transition: transform .25s, opacity .2s, border-color .2s; }
+.thumbs button:hover { transform: translateY(-3px); }
+
+.phones figure { transform: translateY(var(--ty, 0px)); will-change: transform; }
+.phones .phone img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.phones figure:hover .phone img { transform: scale(1.03); }
+
+.stat b { background: linear-gradient(180deg, var(--ink), color-mix(in srgb, var(--ink) 55%, var(--accent))); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.contact-band { position: relative; overflow: hidden; isolation: isolate; }
+.contact-band::before { content: ""; position: absolute; width: 640px; height: 640px; left: -200px; bottom: -320px; background: radial-gradient(circle, rgba(47,111,224,.35), transparent 65%); filter: blur(60px); z-index: -1; animation: drift2 24s ease-in-out infinite alternate; }
+
+.lb { position: fixed; inset: 0; z-index: 80; background: rgba(4,12,15,.92); display: grid; place-items: center; align-content: center; gap: 14px; padding: 56px 16px 24px; backdrop-filter: blur(6px); }
+.lb[hidden] { display: none; }
+.lb img { max-width: min(1500px, 100%); max-height: calc(100vh - 150px); border-radius: 10px; box-shadow: 0 40px 90px -30px #000; animation: lbin .35s cubic-bezier(.2,.7,.2,1); }
+.lb p { color: #b8cdd1; font-size: .92rem; text-align: center; }
+.lb-x { position: absolute; top: max(16px, env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); font: inherit; font-size: .85rem; color: #eaf3f1; background: transparent; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 6px 16px; cursor: pointer; }
+.lb-x:hover { border-color: #6aa3ff; color: #6aa3ff; }
+@keyframes lbin { from { transform: scale(.96); opacity: 0; } to { transform: none; opacity: 1; } }
+
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 2; }
+
+@media (hover: none), (pointer: coarse) { .stage-in { transform: none; } .spot { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .orb, .ticker-track, .contact-band::before { animation: none; }
+  .hero h1 .wd > span { animation: none; }
+  .rv, .rv.pre { transform: none; transition: none; }
+  .stage-in { transform: none; }
+  .phones figure { transform: none; }
+}
+/* cv, nav e formulário */
+.cv-btn { text-decoration: none; font-size: .82rem; font-weight: 700; background: var(--accent); color: var(--accent-ink); border-radius: 999px; padding: 6px 15px; white-space: nowrap; }
+.cv-btn:hover { filter: brightness(1.08); }
+.composer { display: grid; gap: 14px; margin-top: 30px; padding: 24px; border: 1px solid var(--band-line); border-radius: 16px; background: rgba(255,255,255,0.04); min-width: 0; }
+.composer h3 { font-size: 1.2rem; }
+.composer .f-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 560px) { .composer .f-row { grid-template-columns: minmax(0, 1fr); } }
+.composer .f { display: grid; gap: 6px; min-width: 0; }
+.composer label { font-size: .8rem; font-weight: 700; color: var(--band-muted); }
+.composer input, .composer select, .composer textarea { font: inherit; font-size: .95rem; color: var(--band-ink); background: rgba(0,0,0,0.25); border: 1px solid var(--band-line); border-radius: 10px; padding: 10px 12px; width: 100%; min-width: 0; resize: vertical; }
+.composer select option { color: #111; }
+.composer input:focus, .composer select:focus, .composer textarea:focus { outline: 2px solid var(--band-accent); outline-offset: 1px; border-color: transparent; }
+.composer .hint { color: var(--band-muted); font-size: .82rem; }
+.contact .btn:not(.primary) { background: transparent; color: var(--band-ink); border-color: var(--band-line); }
+.contact .btn:not(.primary):hover { border-color: var(--band-accent); }
+.c-row .label { text-transform: none; letter-spacing: .02em; font-size: .85rem; }
+</style>
+</head>
+<body>
+
+
+<div id="progress" aria-hidden="true"></div>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Ecrã ampliado"><button class="lb-x" type="button" id="lbX" aria-label="Fechar">Fechar</button><img id="lbImg" alt=""><p id="lbCap"></p></div>
+<header class="nav bleed">
+  <div class="nav-in">
+    <a class="brand" href="#topo">Adérito<b>.</b>Luciano</a>
+    <a class="lnk" href="#sobre">Sobre</a>
+    <a class="lnk" href="#projetos">Projetos</a>
+    <a class="lnk" href="#outros">Estudos de caso</a>
+    <a class="lnk" href="#experiencia">Experiência</a>
+    <a class="lnk" href="#competencias">Competências</a>
+    <a class="lnk" href="#contacto">Contacto</a>
+    <a class="cv-btn" data-cv href="cv/CV_Aderito_Luciano_Junior.pdf" target="_blank" rel="noopener">Descarregar CV</a>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar tema claro ou escuro">Tema</button>
+  </div>
+</header>
+
+<main id="topo">
+  <div class="hero-band bleed" id="heroBand">
+    <canvas class="net" id="net" aria-hidden="true"></canvas>
+    <div class="orb o1" aria-hidden="true"></div><div class="orb o2" aria-hidden="true"></div>
+    <div class="spot" aria-hidden="true"></div>
+    <div class="wrap hero">
+      <div>
+        <span class="label">Tete, Moçambique · Alltech Solutions</span>
+        <h1 aria-label="Sistemas que fazem negócios funcionar."><span class="wd"><span style="--i:0">Sistemas</span></span> <span class="wd"><span style="--i:1">que</span></span> <span class="wd"><span style="--i:2">fazem</span></span> <span class="wd"><span style="--i:3">negócios</span></span> <span class="wd"><span style="--i:4"><em>funcionar</em>.</span></span></h1>
+        <p class="role">Adérito Ireneu de Fátima Luciano Júnior · Desenvolvedor de Software</p>
+        <p class="lead">Construo software de gestão de ponta a ponta para o mercado moçambicano: do modelo de dados e da interface ao instalador e ao suporte técnico. Finalista de Tecnologias de Informação na FAGRENM-UCM.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projetos">Ver projetos</a>
+          <a class="btn" data-cv href="cv/CV_Aderito_Luciano_Junior.pdf" target="_blank" rel="noopener">Descarregar CV</a>
+          <a class="btn" href="#contacto">Contactar</a>
+          <a class="btn" href="https://github.com/AderitoJR" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://linkedin.com/in/aderito-luciano-junior" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="stage" id="stage" aria-hidden="true"><div class="stage-in">
+        <div class="win w2 tilt"><div class="bar"><i></i><i></i><i></i><span>AgroDesk · Gestão Avícola</span></div><img src="img/ag-dashboard.jpg" width="1400" height="1139" alt=""></div>
+        <div class="win w1 tilt"><div class="bar"><i></i><i></i><i></i><span>DealPoint · PDV</span></div><img src="img/dp-pdv.jpg" width="1400" height="1139" alt=""></div>
+        <div class="phone tilt"><img src="img/cm-carteira.jpg" width="540" height="1105" alt=""></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="ticker bleed" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Java 17</span><span>JavaFX</span><span>PostgreSQL</span><span>SQLite</span><span>TypeScript</span><span>Spring Boot</span><span>Flutter</span><span>Node.js</span><span>React</span><span>React Native</span><span>Next.js</span><span>Laravel</span><span>Firebase</span><span>Supabase</span><span>Docker</span><span>PowerShell</span><span>Linux</span><span>Redes</span>
+      <span>Java 17</span><span>JavaFX</span><span>PostgreSQL</span><span>SQLite</span><span>TypeScript</span><span>Spring Boot</span><span>Flutter</span><span>Node.js</span><span>React</span><span>React Native</span><span>Next.js</span><span>Laravel</span><span>Firebase</span><span>Supabase</span><span>Docker</span><span>PowerShell</span><span>Linux</span><span>Redes</span>
+    </div>
+  </div>
+
+  <section id="sobre">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="label">Sobre</span>
+        <h2>Produto, código e infraestrutura na mesma pessoa.</h2>
+        <p>Trabalho na Alltech Solutions, em Tete, a desenhar e desenvolver produtos de software e a prestar serviços de TI. Conheço o ciclo completo: levantar o problema com o cliente, modelar, programar, instalar e dar suporte.</p>
+      </div>
+      <div class="about rv">
+        <div><span class="label">01 · Sistemas de gestão</span><h3>ERP e POS para PMEs</h3><p>Vendas, stock, caixa, finanças e módulos por setor, com arquitetura offline-first e conformidade com a realidade local: IVA, moeda, regras sectoriais.</p></div>
+        <div><span class="label">02 · Plataformas e mobile</span><h3>Web, apps e APIs</h3><p>Backends REST em Spring Boot e Node.js, aplicações em Flutter e React Native, painéis web e integrações em tempo real.</p></div>
+        <div><span class="label">03 · Infraestrutura e automação</span><h3>TI que se mantém sozinha</h3><p>Redes, hardware, Windows e Linux, e automação em PowerShell para instalar, diagnosticar e manter parques de computadores.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="label">Produtos Alltech Solutions</span>
+        <h2>Projetos principais</h2>
+        <p>Três sistemas completos, com capturas de ecrã reais. Clica nas miniaturas para navegar pelos ecrãs.</p>
+      </div>
+
+      <!-- DEALPOINT -->
+      <article class="showcase" id="dealpoint">
+        <div class="sc-head rv">
+          <div><span class="label status">Aplicação desktop Windows</span><h3>DealPoint</h3><span class="tagline">ERP e POS para PMEs moçambicanas</span></div>
+          <p>Sistema comercial completo para lojas, restaurantes, farmácias, escolas, hotéis, microcrédito e mais de uma dezena de outros negócios. Cada cliente ativa só os módulos de que precisa.</p>
+        </div>
+        <div class="gallery rv" data-gallery>
+          <figure class="win" style="margin:0"><div class="bar"><i></i><i></i><i></i><span data-title>DealPoint · Dashboard</span></div><img data-main src="img/dp-dashboard.jpg" width="1400" height="1139" alt="DealPoint: dashboard com itens em estoque, valor em estoque, faturamento, a receber, lucro líquido e custos"></figure>
+          <div class="cap"><span><b data-cap-t>Dashboard</b></span><span data-cap-d>Indicadores de stock, vendas, dívidas de clientes, lucro líquido e saúde do negócio.</span></div>
+          <div class="thumbs" role="tablist" aria-label="Ecrãs do DealPoint">
+            <button type="button" role="tab" aria-selected="true" data-src="img/dp-dashboard.jpg" data-t="Dashboard" data-d="Indicadores de stock, vendas, dívidas de clientes, lucro líquido e saúde do negócio." data-w="DealPoint · Dashboard" data-alt="DealPoint: dashboard com indicadores de stock, vendas, lucro e custos"><img src="img/dp-dashboard.jpg" width="1400" height="1139" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/dp-pdv.jpg" data-t="Ponto de venda" data-d="PDV com atalhos de teclado, descontos automáticos, preços B2C e B2B, formas de pagamento e fiado." data-w="DealPoint · PDV" data-alt="DealPoint: ponto de venda com carrinho, formas de pagamento e total da venda"><img src="img/dp-pdv.jpg" width="1400" height="1139" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/dp-produtos.jpg" data-t="Produtos" data-d="Catálogo com lotes, validade, categorias, fornecedores e movimentações de estoque." data-w="DealPoint · Produtos" data-alt="DealPoint: gestão de produtos com novo produto em edição"><img src="img/dp-produtos.jpg" width="1400" height="1139" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/dp-financeiro.jpg" data-t="Relatório financeiro" data-d="Receitas, despesas, saldo e distribuição por forma de pagamento, com exportação PDF." data-w="DealPoint · Relatório financeiro" data-alt="DealPoint: relatório financeiro com formas de pagamento"><img src="img/dp-financeiro.jpg" width="1400" height="1139" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/dp-hospedagem.jpg" data-t="Hospedagem" data-d="Mapa de quartos por dia, reservas, check-in, check-out, limpeza e manutenção." data-w="DealPoint · Hospedagem" data-alt="DealPoint: mapa de ocupação de quartos por data"><img src="img/dp-hospedagem.jpg" width="1400" height="1139" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/dp-ajuda.jpg" data-t="Central de ajuda" data-d="Manual completo integrado ao sistema, com fluxo de primeiro acesso e rotina diária." data-w="DealPoint · Central de ajuda" data-alt="DealPoint: central de ajuda com o manual do sistema"><img src="img/dp-ajuda.jpg" width="1400" height="1139" alt="" loading="lazy"></button>
+          </div>
+        </div>
+        <div class="sc-body rv">
+          <ul class="points">
+            <li><h4>Offline-first</h4><p>Funciona sem internet em SQLite e sincroniza com PostgreSQL quando há ligação. Suporta vários caixas, vários postos e partilha em rede local.</p></li>
+            <li><h4>Segurança</h4><p>Criptografia AES-256-GCM dos dados sensíveis, perfis de utilizador, registo de auditoria de ações, backups agendados e chave de base de dados no Credential Manager do Windows.</p></li>
+            <li><h4>Hardware real</h4><p>Impressão térmica ESC/POS, leitor de códigos e PDFs de recibos, relatórios, receitas e guias de transporte.</p></li>
+            <li><h4>Regras locais</h4><p>Moeda múltipla com câmbio, IVA, registo de controlados na farmácia, campos SEF na hospedagem, avaliação escolar segundo o Diploma Ministerial 59/2015, IMI no imobiliário.</p></li>
+            <li><h4>Integração</h4><p>API REST de leitura para o telemóvel (stock, finanças e notificações) e fila de sincronização para servidor remoto.</p></li>
+            <li><h4>Distribuição</h4><p>Instalador MSI nativo, painel técnico exclusivo da Alltech para licença, diagnóstico e recuperação de acessos.</p></li>
+          </ul>
+          <div class="aside">
+            <h4>Módulos de negócio</h4>
+            <div class="chips">
+              <span class="chip on">Retalho</span><span class="chip on">Restaurante e bar</span><span class="chip on">Vestuário</span><span class="chip on">Farmácia</span><span class="chip on">Educação</span><span class="chip on">Hospedagem</span><span class="chip on">Microcrédito</span><span class="chip on">Transportadora</span><span class="chip on">Clínica</span><span class="chip on">Avicultura</span><span class="chip on">Indústria</span><span class="chip on">Imobiliário</span><span class="chip on">Posto de combustível</span><span class="chip on">Concessionária</span><span class="chip on">Cooperativa agrícola</span><span class="chip on">Igreja e ONG</span><span class="chip on">Projetos e serviços</span><span class="chip">+ mais</span>
+            </div>
+            <h4>Tecnologia</h4>
+            <div class="tags"><span class="tag">Java 17</span><span class="tag">JavaFX</span><span class="tag">SQLite</span><span class="tag">PostgreSQL</span><span class="tag">Javalin REST</span><span class="tag">ESC/POS</span><span class="tag">Apache POI</span><span class="tag">AES-256-GCM</span><span class="tag">MSI</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CAROL -->
+      <article class="showcase" id="carol">
+        <div class="sc-head rv">
+          <div><span class="label status">Painel web + aplicação móvel</span><h3>CAROL</h3><span class="tagline">Mobilidade, entregas e restaurantes</span></div>
+          <p>Plataforma onde passageiros pedem corridas, enviam encomendas e pedem comida, e onde a operação é acompanhada em tempo real por um painel administrativo.</p>
+        </div>
+        <div class="gallery rv" data-gallery>
+          <figure class="win" style="margin:0"><div class="bar"><i></i><i></i><i></i><span data-title>CAROL · Painel administrativo</span></div><img data-main src="img/ca-dashboard.jpg" width="1400" height="678" alt="CAROL: visão geral da operação com faturamento, corridas, clientes, motoristas e restaurantes"></figure>
+          <div class="cap"><span><b data-cap-t>Visão geral da operação</b></span><span data-cap-d>Faturamento mensal e anual, corridas, clientes, motoristas, entregadores e restaurantes, filtrável por cidade e período.</span></div>
+          <div class="thumbs" role="tablist" aria-label="Ecrãs do painel CAROL">
+            <button type="button" role="tab" aria-selected="true" data-src="img/ca-dashboard.jpg" data-t="Visão geral da operação" data-d="Faturamento mensal e anual, corridas, clientes, motoristas, entregadores e restaurantes, filtrável por cidade e período." data-w="CAROL · Painel administrativo" data-alt="CAROL: visão geral da operação"><img src="img/ca-dashboard.jpg" width="1400" height="678" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/ca-mapa.jpg" data-t="Mapa operacional" data-d="Corridas ativas, motoristas online e em corrida, com atualização periódica e detalhe por chamada." data-w="CAROL · Mapa operacional" data-alt="CAROL: mapa operacional com corridas ativas e motoristas online"><img src="img/ca-mapa.jpg" width="1400" height="678" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/ca-categorias.jpg" data-t="Categorias de serviço" data-d="Mototáxi, táxi económico, táxi conforto e entregas, cada categoria com as suas tarifas configuráveis." data-w="CAROL · Categorias" data-alt="CAROL: categorias de corrida com tarifas"><img src="img/ca-categorias.jpg" width="1400" height="678" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/ca-tarifa.jpg" data-t="Tarifa dinâmica" data-d="Regras de tarifa por faixa horária e por região." data-w="CAROL · Tarifa dinâmica" data-alt="CAROL: configuração de tarifa dinâmica"><img src="img/ca-tarifa.jpg" width="1400" height="678" alt="" loading="lazy"></button>
+          </div>
+        </div>
+        <div class="phones rv">
+          <figure><div class="phone"><img src="img/cm-home.jpg" width="540" height="1105" alt="CAROL app: início com saldo e serviços Viajar, Mototáxi, Táxi, Carol Food, Delivery" loading="lazy"></div><figcaption>Início e serviços</figcaption></figure>
+          <figure><div class="phone"><img src="img/cm-carteira.jpg" width="540" height="1105" alt="CAROL app: carteira com saldo, depósito, saque e transações" loading="lazy"></div><figcaption>Carteira digital</figcaption></figure>
+          <figure><div class="phone"><img src="img/cm-corridas.jpg" width="540" height="1105" alt="CAROL app: histórico de corridas" loading="lazy"></div><figcaption>Histórico de corridas</figcaption></figure>
+          <figure><div class="phone"><img src="img/cm-conta.jpg" width="540" height="1105" alt="CAROL app: conta com dados pessoais, segurança, disputas e perfil de motorista" loading="lazy"></div><figcaption>Conta e segurança</figcaption></figure>
+        </div>
+        <div class="sc-body rv">
+          <ul class="points">
+            <li><h4>App do passageiro</h4><p>Pedido de corrida com origem e destino, modalidade de entrega com peso, dimensões e valor declarado, chat com o motorista, histórico e disputas de cobrança.</p></li>
+            <li><h4>Carteira</h4><p>Saldo, depósitos, saques, cartões e extrato de movimentações, com transações protegidas.</p></li>
+            <li><h4>Painel de operação</h4><p>Mapa em tempo real, cadastro de motoristas, clientes, cidades e categorias, e novo chamado manual para atendimento por telefone.</p></li>
+            <li><h4>Financeiro</h4><p>Operação financeira, fila de saques com dupla proteção, faturas e inadimplência, cupões de desconto e tarifa dinâmica.</p></li>
+          </ul>
+          <div class="aside">
+            <h4>Perfis na plataforma</h4>
+            <div class="chips"><span class="chip on">Passageiro</span><span class="chip on">Motorista</span><span class="chip on">Entregador</span><span class="chip on">Restaurante</span><span class="chip on">Administração</span></div>
+            <h4>Tecnologia</h4>
+            <div class="tags"><span class="tag">PHP 8.1+</span><span class="tag">Laravel 10</span><span class="tag">PostgreSQL + PostGIS</span><span class="tag">Pusher</span><span class="tag">Redis</span><span class="tag">Blade + Livewire</span></div>
+            <div class="tags" style="margin-top:8px"><span class="tag">TypeScript</span><span class="tag">React Native 0.81</span><span class="tag">Expo 54</span><span class="tag">NativeWind</span><span class="tag">React Query</span><span class="tag">Zustand</span><span class="tag">Jest</span></div>
+            <div class="tags" style="margin-top:8px"><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">Tailwind 4</span><span class="tag">Playwright</span><span class="tag">Docker</span></div>
+            <h4 style="margin-top:26px">Funcionalidades</h4>
+            <div class="tags"><span class="tag">GPS em tempo real</span><span class="tag">Multi-cidade</span><span class="tag">Carol Food</span><span class="tag">Cupões</span><span class="tag">Tarifa dinâmica</span><span class="tag">Saques</span><span class="tag">Faturas</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- AGRODESK -->
+      <article class="showcase" id="agrodesk">
+        <div class="sc-head rv">
+          <div><span class="label status">Aplicação desktop · v3.0</span><h3>AgroDesk</h3><span class="tagline">Gestão avícola e de empresa agrícola</span></div>
+          <p>Controlo da produção e das finanças de uma exploração avícola, do lote ao lucro. Construído sobre a mesma base tecnológica do DealPoint, por isso herda o motor de gestão de empresas.</p>
+        </div>
+        <div class="gallery rv" data-gallery>
+          <figure class="win" style="margin:0"><div class="bar"><i></i><i></i><i></i><span data-title>AgroDesk · Dashboard</span></div><img data-main src="img/ag-dashboard.jpg" width="1400" height="1139" alt="AgroDesk: dashboard com lotes, frangos, mortalidade, vendas, dívidas, custos e lucro"></figure>
+          <div class="cap"><span><b data-cap-t>Dashboard</b></span><span data-cap-d>Lotes, frangos, mortalidade, vendas, recebido, dívidas, custos e lucro, com gráficos interativos e saúde geral do efetivo.</span></div>
+          <div class="thumbs" role="tablist" aria-label="Ecrãs do AgroDesk">
+            <button type="button" role="tab" aria-selected="true" data-src="img/ag-dashboard.jpg" data-t="Dashboard" data-d="Lotes, frangos, mortalidade, vendas, recebido, dívidas, custos e lucro, com gráficos interativos e saúde geral do efetivo." data-w="AgroDesk · Dashboard" data-alt="AgroDesk: dashboard"><img src="img/ag-dashboard.jpg" width="1400" height="1139" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/ag-lotes.jpg" data-t="Gestão de lotes" data-d="Cadastro de lotes com data inicial, efetivo, tipo e estado, filtros por período e resumo." data-w="AgroDesk · Lotes" data-alt="AgroDesk: gestão de lotes"><img src="img/ag-lotes.jpg" width="1400" height="1139" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/ag-registo.jpg" data-t="Registo diário" data-d="Mortalidade, ração e peso médio por lote e por dia, com totais do período." data-w="AgroDesk · Registo diário" data-alt="AgroDesk: registo diário de produção"><img src="img/ag-registo.jpg" width="1400" height="1139" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/ag-vendas.jpg" data-t="Relatório de vendas" data-d="Total, ticket médio, taxa de conversão, devedores e dívidas, com filtros e exportação PDF." data-w="AgroDesk · Relatório de vendas" data-alt="AgroDesk: relatório de vendas"><img src="img/ag-vendas.jpg" width="1400" height="1139" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/ag-producao.jpg" data-t="Relatório de produção" data-d="Mortalidade por causa, consumo de ração por lote, peso e custo de produção." data-w="AgroDesk · Relatório de produção" data-alt="AgroDesk: relatório de produção"><img src="img/ag-producao.jpg" width="1400" height="1139" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/ag-desempenho.jpg" data-t="Desempenho de lotes" data-d="Melhor lote, maior peso, menor mortalidade e conversão alimentar por lote." data-w="AgroDesk · Desempenho de lotes" data-alt="AgroDesk: desempenho de lotes"><img src="img/ag-desempenho.jpg" width="1400" height="1139" alt="" loading="lazy"></button>
+          </div>
+        </div>
+        <div class="sc-body rv">
+          <ul class="points">
+            <li><h4>Zootecnia</h4><p>Lotes, registo diário, mortalidade por causa, consumo de ração, peso médio e conversão alimentar, com parâmetros configuráveis de preço e taxas.</p></li>
+            <li><h4>Gestão da empresa</h4><p>Clientes, vendas, dívidas e vencidas, custos, lucro, relatórios financeiros e de vendas, tal como no DealPoint.</p></li>
+            <li><h4>Administração</h4><p>Utilizadores e perfis, configurações da empresa, backup, auditoria e central de ajuda com o manual completo do sistema.</p></li>
+          </ul>
+          <div class="aside">
+            <h4>Mesma stack do DealPoint</h4>
+            <div class="tags" style="margin-bottom:26px"><span class="tag">Java 17</span><span class="tag">JavaFX</span><span class="tag">SQLite</span><span class="tag">PostgreSQL</span><span class="tag">Relatórios PDF</span></div>
+            <h4>Áreas</h4>
+            <div class="chips"><span class="chip on">Lotes</span><span class="chip on">Produção</span><span class="chip on">Vendas</span><span class="chip on">Financeiro</span><span class="chip on">Relatórios</span><span class="chip on">Sistema</span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="outros">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="label">Estudos de caso</span>
+        <h2>Outras plataformas e ferramentas</h2>
+        <p>Cada projeto com o que foi construído, a arquitetura e a tecnologia.</p>
+      </div>
+
+      <div class="group-title"><span class="label">A</span><h3>Plataformas</h3></div>
+      <div class="cases">
+        <article class="case rv">
+          <header><span class="status">Backend + app móvel</span><h3>ZenorMind</h3><span class="sub">Plataforma de desenvolvimento pessoal</span></header>
+          <p>Em vez de listas de tarefas genéricas, a plataforma transforma um objetivo do utilizador em comportamentos e depois em ações concretas, gerando rotinas personalizadas.</p>
+          <div class="arch"><span>App Flutter</span><i>→</i><span>API Spring Boot + JWT</span><i>→</i><span>PostgreSQL</span><i>+</i><span>AI Coach</span></div>
+          <ul class="list">
+            <li>Motor adaptativo Goal → Behavior → Action que gera rotinas e recomendações personalizadas.</li>
+            <li>Backend completo em Spring Boot com autenticação JWT, integrado à aplicação Flutter.</li>
+            <li>Gamificação, conquistas, diário privado, comunidade e um AI Coach.</li>
+          </ul>
+          <div class="tags"><span class="tag">Spring Boot</span><span class="tag">Java</span><span class="tag">Flutter</span><span class="tag">PostgreSQL</span><span class="tag">JWT</span><span class="tag">IA</span></div>
+        </article>
+
+        <article class="case rv">
+          <header><span class="status">Web PWA + app móvel</span><h3>NexSport</h3><span class="sub">ERP de gestão desportiva</span></header>
+          <p>Sistema para clubes desportivos gerirem a sua operação, com uma só lógica de negócio servindo a web e o telemóvel.</p>
+          <div class="arch"><span>React (PWA)</span><i>+</i><span>React Native</span><i>→</i><span>API Express</span><i>→</i><span>Prisma</span><i>→</i><span>PostgreSQL</span></div>
+          <ul class="list">
+            <li>Backend REST em Node.js e Express com ORM Prisma sobre PostgreSQL.</li>
+            <li>Aplicação web instalável (PWA) em React e aplicação móvel em React Native.</li>
+            <li>Lógica de negócio partilhada entre plataformas, para evitar regras duplicadas.</li>
+          </ul>
+          <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span><span class="tag">React</span><span class="tag">React Native</span></div>
+        </article>
+
+        <article class="case wide rv">
+          <header><span class="status">Em desenvolvimento</span><h3>Workup</h3><span class="sub">Plataforma de emprego para Moçambique, com IA</span></header>
+          <div class="two">
+            <div style="display:grid;gap:18px">
+              <p>Junta num só lugar o que um candidato precisa: CV adaptado a cada vaga, simulação de entrevista e acompanhamento das candidaturas. Para empresas, publicação de vagas. O modelo de receita é pagamento por uso, com M-Pesa e e-Mola na primeira fase.</p>
+              <div class="arch"><span>Next.js 14</span><i>→</i><span>Supabase Auth + RLS</span><i>→</i><span>PostgreSQL</span><i>+</i><span>Claude API</span></div>
+            </div>
+            <ul class="list">
+              <li>Esquema de 9 tabelas em PostgreSQL com políticas de segurança por linha (RLS).</li>
+              <li>Autenticação e acesso a dados no servidor, sem expor chaves ao cliente.</li>
+              <li>Integração com a API do Claude para gerar CVs e conduzir simulações de entrevista.</li>
+              <li>Pagamentos manuais por M-Pesa e e-Mola na primeira fase, com integração Pesepay prevista para a segunda.</li>
+            </ul>
+          </div>
+          <div class="tags"><span class="tag">Next.js 14</span><span class="tag">Supabase</span><span class="tag">PostgreSQL</span><span class="tag">RLS</span><span class="tag">Claude API</span><span class="tag">M-Pesa</span><span class="tag">e-Mola</span></div>
+        </article>
+
+        <article class="case wide rv">
+          <header><span class="status">MVP concluído · web</span><h3>MozHut</h3><span class="sub">Plataforma de imóveis e acomodação de Moçambique</span></header>
+          <div class="two">
+            <div style="display:grid;gap:18px">
+              <p>Reúne num só lugar imóveis para arrendar e comprar, e hotéis, pensões, lodges e hostels. Pensada para Tete, com contacto direto por WhatsApp ou telefone e planos para pagamento por M-Pesa. Fiz o produto e também o plano de negócio e de lançamento.</p>
+              <div class="arch"><span>React + Vite</span><i>→</i><span>API Laravel 11 + Sanctum</span><i>→</i><span>MySQL</span><i>+</i><span>Leaflet / OSM</span></div>
+            </div>
+            <ul class="list">
+              <li>Módulo de imóveis: apartamentos, moradias, quartos, terrenos e espaços comerciais, com filtros por cidade, bairro, preço, quartos e moeda (MZN ou USD).</li>
+              <li>Módulo de acomodação: tipos de quarto, preço por noite, estrelas e pequeno-almoço incluído.</li>
+              <li>Mapa interativo, calculadora, favoritos, comparação de imóveis, avaliações e alertas de pesquisa por email.</li>
+              <li>Perfis de visitante, proprietário, hotel, agente e administração, com aprovação e destaque de anúncios.</li>
+            </ul>
+          </div>
+          <div class="gallery" data-gallery>
+            <figure class="win" style="margin:0"><div class="bar"><i></i><i></i><i></i><span data-title>MozHut · Página inicial</span></div><img data-main src="img/mh-home.jpg" width="1200" height="533" alt="MozHut: página inicial"></figure>
+            <div class="cap"><span><b data-cap-t>Página inicial</b></span><span data-cap-d>Pesquisa rápida por tipo de negócio, tipo de imóvel e cidade, com acesso direto a imóveis e acomodação.</span></div>
+            <div class="thumbs" role="tablist" aria-label="Ecrãs do MozHut">
+            <button type="button" role="tab" aria-selected="true" data-src="img/mh-home.jpg" data-t="Página inicial" data-d="Pesquisa rápida por tipo de negócio, tipo de imóvel e cidade, com acesso direto a imóveis e acomodação." data-w="MozHut · Página inicial" data-alt="MozHut: página inicial"><img src="img/mh-home.jpg" width="1200" height="533" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/mh-imoveis.jpg" data-t="Listagem de imóveis" data-d="Cartões com preço, localização e características, filtros combináveis por cidade, bairro, tipo, preço e comodidades, e ordenação por destaque." data-w="MozHut · Listagem de imóveis" data-alt="MozHut: listagem de imóveis"><img src="img/mh-imoveis.jpg" width="1200" height="533" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/mh-mapa.jpg" data-t="Mapa interativo" data-d="Visualização dos anúncios num mapa Leaflet com OpenStreetMap, alternável com um clique." data-w="MozHut · Mapa interativo" data-alt="MozHut: mapa interativo"><img src="img/mh-mapa.jpg" width="1200" height="533" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/mh-publicar.jpg" data-t="Publicar imóvel" data-d="Formulário do proprietário com tipo, transação, preço em MZN ou USD, localização, contacto WhatsApp e comodidades." data-w="MozHut · Publicar imóvel" data-alt="MozHut: publicar imóvel"><img src="img/mh-publicar.jpg" width="1200" height="533" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/mh-fotos.jpg" data-t="Fotografias e moderação" data-d="Depois de submeter, o anúncio fica pendente de aprovação e o proprietário pode enviar até 10 fotos." data-w="MozHut · Fotografias e moderação" data-alt="MozHut: fotografias e moderação"><img src="img/mh-fotos.jpg" width="1200" height="533" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/mh-admin.jpg" data-t="Painel administrativo" data-d="Indicadores de imóveis, acomodações, utilizadores e reservas, com gráficos mensais e lista de pendentes." data-w="MozHut · Painel administrativo" data-alt="MozHut: painel administrativo"><img src="img/mh-admin.jpg" width="1200" height="533" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/mh-moderacao.jpg" data-t="Moderação de anúncios" data-d="Fila de imóveis pendentes com pesquisa e filtros por estado, tipo e transação, e notificação ao administrador." data-w="MozHut · Moderação de anúncios" data-alt="MozHut: moderação de anúncios"><img src="img/mh-moderacao.jpg" width="1200" height="533" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/mh-utilizadores.jpg" data-t="Gestão de utilizadores" data-d="Papéis (comprador, proprietário, hotel, admin), plano, limite de anúncios, estado e ações de edição e suspensão." data-w="MozHut · Gestão de utilizadores" data-alt="MozHut: gestão de utilizadores"><img src="img/mh-utilizadores.jpg" width="1200" height="533" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/mh-planos.jpg" data-t="Planos e pagamentos" data-d="Receita por plano e registo de cada atualização de plano, com valor pago e quem a autorizou." data-w="MozHut · Planos e pagamentos" data-alt="MozHut: planos e pagamentos"><img src="img/mh-planos.jpg" width="1200" height="533" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/mh-acomodacoes.jpg" data-t="Gestão de acomodações" data-d="Hotéis e pensões com estrelas, tipos de quarto, anfitrião e estado de aprovação." data-w="MozHut · Gestão de acomodações" data-alt="MozHut: gestão de acomodações"><img src="img/mh-acomodacoes.jpg" width="1200" height="533" alt="" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="tags"><span class="tag">Laravel 11</span><span class="tag">PHP 8.3</span><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind</span><span class="tag">MySQL</span><span class="tag">Leaflet</span><span class="tag">Cloudinary</span><span class="tag">Zustand</span></div>
+        </article>
+
+        <article class="case wide rv">
+          <header><span class="status">Aplicação desktop</span><h3>GrowPoint</h3><span class="sub">Gestão agropecuária</span></header>
+          <div class="two">
+            <p>Sistema desktop modular para gestão de pecuária e de agricultura, com indicadores em tempo real e controlo de acessos por perfil.</p>
+            <ul class="list">
+              <li>Pecuária com 6 espécies e módulo de reprodução.</li>
+              <li>Indicadores (KPIs) em tempo real e fecho de caixa diário.</li>
+              <li>Controlo de acesso por perfis (RBAC) e relatórios com JasperReports.</li>
+            </ul>
+          </div>
+          <div class="tags"><span class="tag">Java</span><span class="tag">JavaFX</span><span class="tag">MySQL</span><span class="tag">JasperReports</span></div>
+        </article>
+      </div>
+
+            <div class="group-title"><span class="label">B</span><h3>Sistema bancário</h3></div>
+      <div class="cases">
+        <article class="case wide rv">
+          <header><span class="status">Frontend web</span><h3>Nexus Banking</h3><span class="sub">Internet banking para clientes</span></header>
+          <p>Interface bancária em React para o cliente: autenticação com teclado numérico de PIN, gestão de sessão e o fluxo de operações do dia a dia, de contas e transferências a extracto e câmbio.</p>
+          <div class="gallery" data-gallery>
+            <figure class="win" style="margin:0"><div class="bar"><i></i><i></i><i></i><span data-title>Nexus Banking · As minhas contas</span></div><img data-main src="img/nx-contas.jpg" width="1200" height="551" alt="Nexus Banking: as minhas contas"></figure>
+            <div class="cap"><span><b data-cap-t>As minhas contas</b></span><span data-cap-d>Contas em euros e meticais, com saldo disponível e estado de cada uma.</span></div>
+            <div class="thumbs" role="tablist" aria-label="Ecrãs do Nexus Banking">
+            <button type="button" role="tab" aria-selected="true" data-src="img/nx-contas.jpg" data-t="As minhas contas" data-d="Contas em euros e meticais, com saldo disponível e estado de cada uma." data-w="Nexus Banking · As minhas contas" data-alt="Nexus Banking: as minhas contas"><img src="img/nx-contas.jpg" width="1200" height="551" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/nx-extracto.jpg" data-t="Extracto de conta" data-d="Filtros por conta e datas, totais debitados e creditados e exportação para PDF." data-w="Nexus Banking · Extracto de conta" data-alt="Nexus Banking: extracto de conta"><img src="img/nx-extracto.jpg" width="1200" height="551" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/nx-cambio.jpg" data-t="Câmbio de moedas" data-d="Conversor e tabela de taxas de câmbio a partir de uma API externa." data-w="Nexus Banking · Câmbio de moedas" data-alt="Nexus Banking: câmbio de moedas"><img src="img/nx-cambio.jpg" width="1200" height="551" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/nx-transferencias.jpg" data-t="Transferências" data-d="Transferência com conversão automática de moeda." data-w="Nexus Banking · Transferências" data-alt="Nexus Banking: nova transferência"><img src="img/nx-transferencias.jpg" width="1200" height="551" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/nx-definicoes.jpg" data-t="Definições da conta" data-d="Perfil, estado KYC e separador de segurança." data-w="Nexus Banking · Definições da conta" data-alt="Nexus Banking: definições da conta"><img src="img/nx-definicoes.jpg" width="1200" height="551" alt="" loading="lazy"></button>
+            <button type="button" role="tab" aria-selected="false" data-src="img/nx-dashboard.jpg" data-t="Painel principal" data-d="Atalhos, totais, câmbio base e atividade dos últimos 7 dias." data-w="Nexus Banking · Painel principal" data-alt="Nexus Banking: painel principal"><img src="img/nx-dashboard.jpg" width="1200" height="551" alt="" loading="lazy"></button>
+          </div>
+          </div>
+          <ul class="list">
+            <li>Contas em várias moedas (euro e metical), com saldo, estado e extracto filtrável, com exportação para PDF.</li>
+            <li>Transferências entre contas com conversão automática de moeda e tabela de câmbio.</li>
+            <li>Login com PIN, sessão segura e consumo de uma API REST.</li>
+          </ul>
+          <div class="tags"><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">CSS</span><span class="tag">REST API</span></div>
+        </article>
+
+        <article class="case rv">
+          <header><span class="status">Backend</span><h3>Atlas Bank</h3><span class="sub">API bancária</span></header>
+          <p>API REST em Laravel para um banco, com autenticação por PIN e atenção à segurança do acesso.</p>
+          <ul class="list">
+            <li>Autenticação por PIN com proteção contra ataques de força bruta.</li>
+            <li>Gestão completa do ciclo de vida do PIN.</li>
+            <li>Sistema de conversão de moeda.</li>
+          </ul>
+          <div class="tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">REST API</span></div>
+        </article>
+
+        <article class="case rv">
+          <header><span class="status">Painel administrativo</span><h3>Cloud Bank BDM-A</h3><span class="sub">Backoffice bancário</span></header>
+          <figure class="win" style="margin:0"><div class="bar"><i></i><i></i><i></i><span>Cloud Bank · Dashboard administrativo</span></div><img src="img/cb-dashboard.jpg" width="1200" height="551" alt="Cloud Bank: dashboard administrativo com clientes, contas, volume, KYC pendente e transações" loading="lazy" style="cursor:zoom-in"></figure>
+          <ul class="list">
+            <li>Dashboard com clientes, contas ativas, volume, KYC pendente e atividade de transações.</li>
+            <li>Gestão de contas, transações, KYC, transferências interbancárias e cartões.</li>
+            <li>Área de backoffice com deteção de transações suspeitas.</li>
+          </ul>
+          <div class="tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">MySQL</span></div>
+        </article>
+      </div>
+
+      <div class="group-title"><span class="label">C</span><h3>Ferramentas e automação</h3></div>
+      <div class="cases">
+        <article class="case rv">
+          <header><span class="status">Utilitário Windows</span><h3>VoidTrace09</h3><span class="sub">Ferramenta de HelpDesk para técnicos</span></header>
+          <p>Reúne num único programa os diagnósticos que um técnico faz todos os dias, com acesso protegido e interface gráfica, distribuído como um .exe.</p>
+          <ul class="list">
+            <li>Hardware: tipo de RAM (DDR3, DDR4, DDR5), memória de vídeo dedicada, TRIM, virtualização, plano de energia, Secure Boot e TPM, com pontuação de preparação para jogos.</li>
+            <li>Discos: diagnóstico de “porque é que o disco não liberta espaço”, com remoção segura de Windows.old.</li>
+            <li>Falhas: histórico real de BSOD, diagnóstico físico de pen USB, gestor de serviços e atualizações.</li>
+            <li>Sem winget instalado, avisa e abre a ligação oficial, em vez de instalar sozinho.</li>
+          </ul>
+          <div class="tags"><span class="tag">PowerShell</span><span class="tag">PS2EXE</span><span class="tag">Windows</span><span class="tag">GUI</span></div>
+        </article>
+
+        <article class="case rv">
+          <header><span class="status">Scripts de infraestrutura</span><h3>Automação de TI</h3><span class="sub">Preparar e manter computadores em escala</span></header>
+          <p>Conjunto de scripts PowerShell para pôr um computador pronto a trabalhar sem instalações manuais.</p>
+          <ul class="list">
+            <li>Drivers com SDIO e controladores universais de impressora.</li>
+            <li>Microsoft Office via ODT, em várias versões e idiomas.</li>
+            <li>Imagens ISO de Windows e Linux e mais de 100 ferramentas de hardware, rede, segurança e virtualização.</li>
+            <li>winget como instalador principal e Chocolatey como alternativa.</li>
+          </ul>
+          <div class="tags"><span class="tag">PowerShell</span><span class="tag">winget</span><span class="tag">Chocolatey</span><span class="tag">SDIO</span><span class="tag">ODT</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="label">Percurso</span><h2>Experiência</h2></div>
+      <div class="xp">
+        <div class="xp-item rv">
+          <div class="mono">Jun 2026 – Jul 2026</div>
+          <div>
+            <h3>Assistente de TI, Processamento de Dados Qualitativos</h3>
+            <p class="org">Sociedade Aberta (SA) / ProPaz · financiado pela União Europeia e OSF</p>
+            <ul>
+              <li>Processamento e organização de dados qualitativos recolhidos em 10 províncias, incluindo áudios de entrevistas e grupos focais.</li>
+              <li>Transcrição automática com TurboScribe PRO e estruturação de arquivos por distrito e província, com rastreabilidade.</li>
+              <li>Matrizes de metadados em Excel para catalogação e monitorização das transcrições.</li>
+              <li>Confidencialidade e anonimização de dados sensíveis, segundo os protocolos éticos do projeto, em equipa multidisciplinar.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="xp-item rv">
+          <div class="mono">Jan 2024 – Mar 2025</div>
+          <div>
+            <h3>Estagiário em Tecnologias de Informação</h3>
+            <p class="org">Newlux Multiservice, Lda · Tete (híbrido)</p>
+            <ul>
+              <li>Instalação, configuração e manutenção de computadores, periféricos e impressoras.</li>
+              <li>Suporte técnico a utilizadores e resolução de falhas de software e sistema operativo.</li>
+              <li>Configuração e monitorização de redes locais (LAN) e conectividade.</li>
+              <li>Apoio à infraestrutura de TI em ambientes Windows e Linux.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="xp-item rv">
+          <div class="mono">Atualmente</div>
+          <div>
+            <h3>Desenvolvedor de Software</h3>
+            <p class="org">Alltech Solutions · Tete, Moçambique</p>
+            <ul>
+              <li>Desenho e desenvolvimento dos produtos DealPoint, CAROL e AgroDesk, do código ao instalador.</li>
+              <li>Painel técnico próprio para licenciamento, diagnóstico de instalações e recuperação de acessos.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="competencias">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="label">Stack</span><h2>Competências</h2></div>
+      <div class="skills rv">
+        <div><h3>Linguagens</h3><ul><li>Java</li><li>TypeScript</li><li>PHP</li><li>Python</li></ul></div>
+        <div><h3>Frameworks</h3><ul><li>Spring Boot</li><li>Laravel</li><li>Node.js e Express</li><li>React, Next.js e React Native</li><li>Expo e Flutter</li><li>Tailwind</li><li>JavaFX</li></ul></div>
+        <div><h3>Dados</h3><ul><li>SQL</li><li>PostgreSQL e PostGIS</li><li>MySQL</li><li>SQLite</li><li>Redis</li><li>Prisma</li><li>Firebase</li><li>Supabase</li></ul></div>
+        <div><h3>Infraestrutura e scripting</h3><ul><li>PowerShell</li><li>Docker, Git e GitHub</li><li>Windows e Linux</li><li>Redes LAN e WAN</li><li>Manutenção de hardware</li></ul></div>
+        <div><h3>Design e escritório</h3><ul><li>Adobe Photoshop</li><li>Microsoft Office</li><li>Google Workspace</li></ul></div>
+      </div>
+      <div class="two-col rv">
+        <div>
+          <h3>Formação</h3>
+          <div class="row"><span>Licenciatura em Tecnologias de Informação<br><span class="mono">FAGRENM-UCM · último ano</span></span><span>2023 – presente</span></div>
+          <div class="row"><span>Curso de Inglês<br><span class="mono">Instituto de Línguas, Tete</span></span><span>2020 – 2021</span></div>
+        </div>
+        <div>
+          <h3>Idiomas</h3>
+          <div class="row"><span>Português</span><span>Nativo</span></div>
+          <div class="row"><span>Nyungwe</span><span>Nativo</span></div>
+          <div class="row"><span>Inglês</span><span>Avançado</span></div>
+          <div class="row"><span>Francês</span><span>Intermédio</span></div>
+          <div class="row"><span>Mandarim</span><span>Básico</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-band bleed" id="contacto">
+    <div class="wrap">
+      <div class="contact rv">
+        <div>
+          <span class="label">Contacto</span>
+          <h2>Vamos construir algo.</h2>
+          <p class="lead">Disponível para projetos, estágios e oportunidades de desenvolvimento de software. Escreve-me por WhatsApp ou email, ou descarrega o meu CV.</p>
+          <div class="cta" style="margin-top:22px"><a class="btn primary" data-cv href="cv/CV_Aderito_Luciano_Junior.pdf" target="_blank" rel="noopener">Descarregar CV (PDF)</a></div>
+        </div>
+        <div class="c-list">
+          <div class="c-row"><span class="label">Email</span><span class="val">aderitoluciano17@gmail.com</span><button class="copy" type="button" data-copy="aderitoluciano17@gmail.com">Copiar</button></div>
+          <div class="c-row"><span class="label">Telefone</span><span class="val">+258 86 483 5909</span><button class="copy" type="button" data-copy="+258 86 483 5909">Copiar</button></div>
+          <div class="c-row"><span class="label">WhatsApp</span><a class="val" href="https://wa.me/258864835909" target="_blank" rel="noopener">wa.me/258864835909</a><span></span></div>
+          <div class="c-row"><span class="label">LinkedIn</span><a class="val" href="https://linkedin.com/in/aderito-luciano-junior" target="_blank" rel="noopener">linkedin.com/in/aderito-luciano-junior</a><span></span></div>
+          <div class="c-row"><span class="label">GitHub</span><a class="val" href="https://github.com/AderitoJR" target="_blank" rel="noopener">github.com/AderitoJR</a><span></span></div>
+          
+          <form class="composer" id="composer" autocomplete="off" novalidate>
+            <h3>Escreve-me uma mensagem</h3>
+            <div class="f-row">
+              <div class="f"><label for="cName">O teu nome</label><input id="cName" type="text" placeholder="Nome e apelido" maxlength="80"></div>
+              <div class="f"><label for="cTopic">Assunto</label><select id="cTopic"><option>Proposta de projeto</option><option>Orçamento de software</option><option>Oportunidade de emprego ou estágio</option><option>Suporte técnico</option><option>Outro assunto</option></select></div>
+            </div>
+            <div class="f"><label for="cMsg">Mensagem</label><textarea id="cMsg" rows="4" placeholder="Conta-me em poucas linhas o que precisas." maxlength="800"></textarea></div>
+            <div class="cta">
+              <a class="btn primary" id="cWa" href="https://wa.me/258864835909" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+              <a class="btn" id="cMail" href="mailto:aderitoluciano17@gmail.com">Enviar por email</a>
+            </div>
+            <p class="hint">Os botões abrem o WhatsApp ou a tua app de email com a mensagem pronta. Se o email não abrir, copia o endereço acima.</p>
+          </form>
+        </div>
+      </div>
+      <footer class="foot"><span>Adérito Ireneu de Fátima Luciano Júnior</span><span>Alltech Solutions · Tete, Moçambique</span></footer>
+    </div>
+  </div>
+</main>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  try { var t = localStorage.getItem("theme"); if (t === "dark" || t === "light") root.setAttribute("data-theme", t); } catch (e) {}
+  var themeBtn = document.getElementById("themeBtn");
+  themeBtn.addEventListener("click", function () {
+    var cur = root.getAttribute("data-theme");
+    var dark = cur === "dark" || (!cur && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    function apply() { root.setAttribute("data-theme", next); try { localStorage.setItem("theme", next); } catch (e) {} }
+    if (!document.startViewTransition || window.matchMedia("(prefers-reduced-motion: reduce)").matches) { apply(); return; }
+    var r = themeBtn.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+    var rad = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+    var vt = document.startViewTransition(apply);
+    vt.ready.then(function () {
+      root.animate({ clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + rad + "px at " + x + "px " + y + "px)"] },
+        { duration: 650, easing: "cubic-bezier(.2,.7,.2,1)", pseudoElement: "::view-transition-new(root)" });
+    }).catch(function () {});
+  });
+
+  document.querySelectorAll("[data-gallery]").forEach(function (g) {
+    var main = g.querySelector("[data-main]"), title = g.querySelector("[data-title]");
+    var capT = g.querySelector("[data-cap-t]"), capD = g.querySelector("[data-cap-d]");
+    var tabs = g.querySelectorAll(".thumbs button");
+    function select(b) {
+      tabs.forEach(function (x) { x.setAttribute("aria-selected", x === b ? "true" : "false"); });
+      title.textContent = b.dataset.w; capT.textContent = b.dataset.t; capD.textContent = b.dataset.d;
+      main.classList.add("swap");
+      var pre = new Image(); pre.onload = pre.onerror = function () { main.src = b.dataset.src; main.alt = b.dataset.alt || ""; requestAnimationFrame(function () { main.classList.remove("swap"); }); };
+      pre.src = b.dataset.src;
+    }
+    tabs.forEach(function (b, i) {
+      b.addEventListener("click", function () { select(b); });
+      b.addEventListener("keydown", function (e) {
+        var n = e.key === "ArrowRight" ? i + 1 : e.key === "ArrowLeft" ? i - 1 : null;
+        if (n === null || !tabs[n]) return;
+        e.preventDefault(); tabs[n].focus(); select(tabs[n]);
+      });
+    });
+  });
+
+  document.querySelectorAll(".copy").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var v = b.getAttribute("data-copy"), old = b.textContent;
+      function done() { b.textContent = "Copiado"; setTimeout(function () { b.textContent = old; }, 1500); }
+      function fallback() {
+        var r = document.createRange(); r.selectNodeContents(b.previousElementSibling);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(v).then(done, fallback);
+      else fallback();
+    });
+  });
+
+  var links = document.querySelectorAll(".nav a.lnk");
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a; });
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) {
+          links.forEach(function (a) { a.removeAttribute("aria-current"); });
+          if (map[e.target.id]) map[e.target.id].setAttribute("aria-current", "true");
+        }
+      });
+    }, { rootMargin: "-40% 0px -55% 0px" });
+    Object.keys(map).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+  }
+
+  /* ===== efeitos ===== */
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  /* barra de progresso */
+  var bar = document.getElementById("progress"), ticking = false;
+  var phoneFigs = document.querySelectorAll(".phones figure");
+  function onScroll() {
+    ticking = false;
+    var h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = "scaleX(" + (h > 0 ? Math.min(1, scrollY / h) : 0) + ")";
+    if (!reduce) phoneFigs.forEach(function (f, i) {
+      var r = f.getBoundingClientRect();
+      if (r.bottom < -100 || r.top > innerHeight + 100) return;
+      var c = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;
+      f.style.setProperty("--ty", (c * (i % 2 ? 34 : -34)).toFixed(1) + "px");
+    });
+  }
+  addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  /* reveal ao rolar (estado de repouso visível; só desloca por transform) */
+  if (!reduce && "IntersectionObserver" in window) {
+    var rvs = document.querySelectorAll(".rv");
+    var rio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove("pre"); rio.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    rvs.forEach(function (el) {
+      if (el.getBoundingClientRect().top > innerHeight * 0.92) { el.classList.add("pre"); rio.observe(el); }
+    });
+  }
+
+  /* contadores */
+  if (!reduce && "IntersectionObserver" in window) {
+    var cio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        cio.unobserve(e.target);
+        var el = e.target, to = +el.dataset.count, t0 = performance.now(), d = 1500;
+        (function step(t) {
+          var k = Math.min(1, (t - t0) / d), v = 1 - Math.pow(1 - k, 4);
+          el.textContent = Math.round(to * v);
+          if (k < 1) requestAnimationFrame(step);
+        })(t0);
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll("[data-count]").forEach(function (el) { cio.observe(el); });
+  }
+
+  /* hero: foco, inclinação 3D e rede de partículas */
+  var band = document.getElementById("heroBand"), stage = document.getElementById("stage");
+  var inner = stage && stage.querySelector(".stage-in");
+  var tx = 0, ty = 0, cx = 0, cy = 0, mouse = { x: -999, y: -999 };
+  if (band && fine && !reduce) {
+    band.addEventListener("pointermove", function (e) {
+      var r = band.getBoundingClientRect();
+      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+      band.style.setProperty("--mx", mouse.x + "px"); band.style.setProperty("--my", mouse.y + "px");
+      var sr = stage.getBoundingClientRect();
+      tx = Math.max(-1, Math.min(1, (e.clientX - (sr.left + sr.width / 2)) / (innerWidth / 2)));
+      ty = Math.max(-1, Math.min(1, (e.clientY - (sr.top + sr.height / 2)) / (innerHeight / 2)));
+    });
+    band.addEventListener("pointerleave", function () { tx = 0; ty = 0; mouse.x = mouse.y = -999; });
+    (function loop() {
+      cx += (tx - cx) * 0.07; cy += (ty - cy) * 0.07;
+      inner.style.setProperty("--px", cx.toFixed(3)); inner.style.setProperty("--py", cy.toFixed(3));
+      requestAnimationFrame(loop);
+    })();
+  }
+
+  var cv = document.getElementById("net");
+  if (cv && !reduce && cv.getContext) {
+    var ctx = cv.getContext("2d"), W = 0, H = 0, dpr = Math.min(2, devicePixelRatio || 1), pts = [], vis = true, last = 0;
+    function size() {
+      var r = band.getBoundingClientRect(); W = r.width; H = r.height;
+      cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.round(Math.min(70, Math.max(26, W * H / 16000)));
+      pts = [];
+      for (var i = 0; i < n; i++) pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .28, vy: (Math.random() - .5) * .28 });
+    }
+    size();
+    if ("ResizeObserver" in window) new ResizeObserver(size).observe(band);
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (e) { vis = e[0].isIntersecting; }, { threshold: 0 }).observe(band);
+    (function draw(t) {
+      requestAnimationFrame(draw);
+      if (!vis || document.hidden || t - last < 30) return;
+      last = t;
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i]; p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1;
+        for (var j = i + 1; j < pts.length; j++) {
+          var q = pts[j], dx = p.x - q.x, dy = p.y - q.y, d = dx * dx + dy * dy;
+          if (d < 14400) { ctx.strokeStyle = "rgba(106,163,255," + (0.2 * (1 - d / 14400)).toFixed(3) + ")"; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke(); }
+        }
+        var mdx = p.x - mouse.x, mdy = p.y - mouse.y, md = mdx * mdx + mdy * mdy;
+        if (md < 32400) { ctx.strokeStyle = "rgba(240,178,90," + (0.55 * (1 - md / 32400)).toFixed(3) + ")"; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke(); p.x += mdx * 0.002; p.y += mdy * 0.002; }
+        ctx.fillStyle = "rgba(106,163,255,0.55)"; ctx.beginPath(); ctx.arc(p.x, p.y, 1.5, 0, 6.2832); ctx.fill();
+      }
+    })(0);
+  }
+
+  /* botões magnéticos */
+  if (fine && !reduce) document.querySelectorAll(".cta .btn, .theme-btn").forEach(function (b) {
+    b.addEventListener("pointermove", function (e) {
+      var r = b.getBoundingClientRect();
+      b.style.transform = "translate(" + ((e.clientX - r.left - r.width / 2) * 0.22).toFixed(1) + "px," + ((e.clientY - r.top - r.height / 2) * 0.3).toFixed(1) + "px)";
+    });
+    b.addEventListener("pointerleave", function () { b.style.transform = ""; });
+  });
+
+  /* foco ao passar nos cartões */
+  if (fine) document.querySelectorAll(".case").forEach(function (c) {
+    c.addEventListener("pointermove", function (e) {
+      var r = c.getBoundingClientRect();
+      c.style.setProperty("--cx", (e.clientX - r.left) + "px"); c.style.setProperty("--cy", (e.clientY - r.top) + "px");
+    });
+  });
+
+  /* inclinação suave das janelas das galerias */
+  if (fine && !reduce) document.querySelectorAll(".gallery .win").forEach(function (w) {
+    w.addEventListener("pointermove", function (e) {
+      var r = w.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      w.style.transform = "perspective(1400px) rotateY(" + (x * 3.2).toFixed(2) + "deg) rotateX(" + (-y * 2.6).toFixed(2) + "deg)";
+    });
+    w.addEventListener("pointerleave", function () { w.style.transform = ""; });
+  });
+
+  /* lightbox */
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg"), lbCap = document.getElementById("lbCap"), lastFocus = null;
+  function openLb(img, cap) { lastFocus = document.activeElement; lbImg.src = img.src; lbImg.alt = img.alt; lbCap.textContent = cap || ""; lb.hidden = false; document.getElementById("lbX").focus(); }
+  function closeLb() { lb.hidden = true; lbImg.removeAttribute("src"); if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  document.querySelectorAll(".gallery .win img[data-main]").forEach(function (img) {
+    img.addEventListener("click", function () { var g = img.closest(".gallery"); openLb(img, g.querySelector("[data-cap-t]").textContent + " · " + g.querySelector("[data-cap-d]").textContent); });
+  });
+  document.querySelectorAll(".case > figure.win > img:not([data-main])").forEach(function (img) { img.addEventListener("click", function () { openLb(img, img.alt); }); });
+  document.querySelectorAll(".phones .phone img").forEach(function (img) {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", function () { openLb(img, img.alt); });
+  });
+  lb.addEventListener("click", function (e) { if (e.target !== lbImg) closeLb(); });
+  addEventListener("keydown", function (e) { if (e.key === "Escape" && !lb.hidden) closeLb(); });
+  /* descarregar CV */
+  var dlCap = null, skipCv = false;
+  try { if (window.claude && window.claude.use) window.claude.use("downloads").then(function (d) { dlCap = d; }, function () {}); } catch (e) {}
+  document.querySelectorAll("[data-cv]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      if (skipCv || !dlCap) return;
+      e.preventDefault();
+      fetch(a.getAttribute("href")).then(function (r) { if (!r.ok) throw new Error("fetch"); return r.blob(); })
+        .then(function (blob) { return dlCap.save({ filename: "CV_Aderito_Luciano_Junior.pdf", data: blob }); })
+        .catch(function (err) { if (err && err.code === "declined") return; skipCv = true; a.click(); skipCv = false; });
+    });
+  });
+
+  /* mensagem pronta para WhatsApp e email */
+  var fName = document.getElementById("cName"), fTopic = document.getElementById("cTopic"), fMsg = document.getElementById("cMsg");
+  var lWa = document.getElementById("cWa"), lMail = document.getElementById("cMail");
+  function compose() {
+    var n = fName.value.trim(), t = fTopic.value, m = fMsg.value.trim();
+    var txt = "Olá Adérito," + (n ? " o meu nome é " + n + "." : "") + "\nAssunto: " + t + "." + (m ? "\n\n" + m : "");
+    lWa.href = "https://wa.me/258864835909?text=" + encodeURIComponent(txt);
+    lMail.href = "mailto:aderitoluciano17@gmail.com?subject=" + encodeURIComponent(t + (n ? " · " + n : "")) + "&body=" + encodeURIComponent(txt);
+  }
+  [fName, fTopic, fMsg].forEach(function (el) { el.addEventListener("input", compose); el.addEventListener("change", compose); });
+  document.getElementById("composer").addEventListener("submit", function (e) { e.preventDefault(); });
+  compose();
+})();
+</script>
+
+</body>
+</html>
